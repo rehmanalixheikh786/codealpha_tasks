@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aperture — A Photography Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand">Aperture</a>
+      <nav aria-label="Primary">
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <h1>Twelve frames,<br>one long look.</h1>
+      <p class="hero-copy">A small collection pulled from five years of wandering — mountains, machines, cities, roads, and the people along the way. Filter by subject, then click into any frame for the full view.</p>
+    </section>
+
+    <section class="gallery-section wrap" id="gallery">
+      <div class="filter-bar" role="group" aria-label="Filter images by category">
+        <button class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="nature" aria-pressed="false">Nature</button>
+        <button class="filter-btn" data-filter="technology" aria-pressed="false">Technology</button>
+        <button class="filter-btn" data-filter="travel" aria-pressed="false">Travel</button>
+        <button class="filter-btn" data-filter="architecture" aria-pressed="false">Architecture</button>
+        <button class="filter-btn" data-filter="people" aria-pressed="false">People</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Gallery items injected by script.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Aperture — a gallery built with HTML, CSS &amp; vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close viewer">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
+
+    <div class="lb-content">
+      <img src="" alt="" id="lbImage">
+      <div class="lb-caption">
+        <span class="lb-title" id="lbTitle"></span>
+        <span class="lb-counter" id="lbCounter"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

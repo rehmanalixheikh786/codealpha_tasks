@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rehman Ali — Full-Stack Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Rehman Ali is a full-stack web developer specializing in Html, CSS JavaScript, TailwindCSS, React and modern responsive interfaces. Browse projects, skills, and get in touch for freelance or full-time work."
+    />
+    <meta name="author" content="Rehman Ali" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Rehman Ali — Full-Stack Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Full-stack developer building clean, responsive web applications with Html, CSS, JavaScript, TailwindCSS, React, NodeJS, ExpressJS, mongodb, mysql, and modern tooling."
+    />
+    <meta property="og:image" content="images/og-cover.jpg" />
+
+      <link rel="icon" href="./assets/icon/logo.png" type="image/icon type">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 
+================================================================================================
+Font Awesome icons link
+================================================================================================
+-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- 
+================================================================================================
+NAVBAR
+================================================================================================
+-->
+    <header class="navbar" id="navbar">
+      <div class="wrap navbar-inner">
+        <a href="#home" class="logo"
+          >Rehman<span class="logo-dot">.</span>Ali</a
+        >
+
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+          <a href="#home" class="nav-link is-active">Home</a>
+          <a href="#about" class="nav-link">About US</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#resume" class="nav-link">Resume</a>
+          <a href="#contact" class="nav-link">Get in touch</a>
+        </nav>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- 
+================================================================================================
+HERO
+================================================================================================
+-->
+      <section class="hero" id="home">
+        <div class="wrap hero-inner">
+          <div class="hero-text reveal">
+            <p class="hero-kicker">// hello world</p>
+            <h1>Hi, I'm Rehman Ali</h1>
+            <p class="hero-role">Web Developer</p>
+            <p class="hero-copy">
+              I build fast, accessible web applications from first line of code
+              to production — currently focused on React front ends &amp;
+              back-end, and the small UX details that make software feel
+              effortless to use.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a
+                href="./assets/resume/resume.pdf"
+                class="btn btn-outline"
+                download
+                >Download Resume</a
+              >
+              <a href="#contact" class="btn btn-ghost">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="editor-window">
+              <div class="editor-titlebar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="editor-filename">profile.js</span>
+              </div>
+              <div class="editor-body">
+                <img
+                  src="./assets/images/hero.jpg"
+                  alt="Portrait of Rehman Ali, full-stack developer"
+                  class="avatar-img"
+                />
+              </div>
+            </div>
+            <span class="float-chip chip-1">JavaScript</span>
+            <span class="float-chip chip-2">NodeJS</span>
+            <span class="float-chip chip-3">ExpressJS</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+================================================================================================
+ABOUT US
+================================================================================================
+-->
+      <section class="about" id="about">
+        <div class="wrap">
+          <h2 class="reveal">About US</h2>
+
+          <div class="about-grid">
+            <div class="about-image reveal">
+              <img
+                src="./assets/images/about_us.jpg"
+                alt="Rehman Ali"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="about-content reveal">
+              <p class="about-lead">
+                I'm a full-stack developer who enjoys turning ambiguous problems
+                into interfaces people find genuinely easy to use. I care as
+                much about clean, maintainable code as I do about the pixel
+                details on screen.
+              </p>
+
+              <div class="about-columns">
+                <div class="about-block">
+                  <h3>Professional Training</h3>
+                  <p>
+                    ACCP Prime 2.0<br />Aptech Garden Center Karachi (In
+                    Progress)
+                  </p>
+                </div>
+                <div class="about-block">
+                  <h3>Academic Qualification</h3>
+                  <p>
+                    FSC: Pre-Engineering<br />
+                    Emerson College Multan , 2019–2021
+                  </p>
+                </div>
+                <div class="about-block">
+                  <h3>Career goals</h3>
+                  <p>
+                    Growing into a role where I can own products end-to-end,
+                    from architecture to UI polish.
+                  </p>
+                </div>
+                <div class="about-block">
+                  <h3>Strengths</h3>
+                  <div class="tag-row">
+                    <span class="tag">Problem solving</span>
+                    <span class="tag">Attention to detail</span>
+                    <span class="tag">Clear communication</span>
+                    <span class="tag">Fast learner</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+================================================================================================
+SKILLS
+================================================================================================
+-->
+      <section class="skills" id="skills">
+        <div class="wrap">
+          <h2 class="reveal">Skills</h2>
+          <p class="section-lead reveal">
+            Technologies and tools I use day to day.
+          </p>
+
+          <div class="skills-grid" id="skillsGrid">
+            <!-- Skill cards are rendered by script.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+================================================================================================
+PROJECTS
+================================================================================================
+-->
+      <section class="projects" id="projects">
+        <div class="wrap">
+          <h2 class="reveal">Projects</h2>
+          <p class="section-lead reveal">
+            A selection of things I've built recently.
+          </p>
+
+          <div
+            class="filter-bar reveal"
+            role="group"
+            aria-label="Filter projects by category"
+          >
+            <button
+              class="filter-btn is-active"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="html-css"
+              aria-pressed="false"
+            >
+              HTML/CSS
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="javascript"
+              aria-pressed="false"
+            >
+              JavaScript
+            </button>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid">
+            <!-- Project cards are rendered by script.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+================================================================================================
+RESUME
+================================================================================================
+-->
+      <section class="resume" id="resume">
+        <div class="wrap">
+          <h2 class="reveal">Resume</h2>
+          <p class="section-lead reveal">
+            The short version — full detail is in the PDF.
+          </p>
+
+          <div class="resume-grid">
+            <div class="timeline reveal">
+              <h3>Experience</h3>
+              <div class="timeline-item">
+                <span class="timeline-date">2022 – 2026</span>
+                <h4>STORE INCHARGE | SHOPIFY | SM GARMENTS OUTLET</h4>
+                <p>
+                  <b>Achievements/Task</b> <br />
+                  POS Operation, Stock Management, Team Leading, Cash Handling
+                  Procedures, Handling Customer Complaints, Customer Service,
+                  Problem Troubleshooting, Data Entry, CCTV Operation, Internet
+                  Troubleshooting. Order Management, Finance Reports Management,
+                  Customer Relationship Management.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-date">2021 – 2022</span>
+                <h4>LAB TECHNICIAN | GATRON INDUSTRIES</h4>
+                <p>
+                  <b>Achievements/Task </b> <br />
+                  Yarn Testing, Data Entry, File Management.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-date">2020 – 2021</span>
+                <h4>POINT CHECKER | ADAM JEE</h4>
+                <p>
+                  <b>Achievements/Task </b> <br />
+                  Line Checker
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-side reveal">
+              <div class="resume-card">
+                <h3>Core skills</h3>
+                <ul class="plain-list">
+                  <li>
+                    Artificial Intelligence Automation, Canva, &amp; Figma
+                  </li>
+                  <li>
+                    Shopify: Order &amp; Finance Report Management, Order
+                    Tracking, Customer Relationship Management
+                  </li>
+                  <li>Cashier, POS Operations, Data Entry</li>
+                  <li>
+                    Windows Operating System, Software Installation &amp;
+                    Updates
+                  </li>
+                  <li>Hardware&amp; Software Troubleshooting</li>
+                  <li>
+                    Microsoft Office Automation, CCTV Operation, Internet
+                    Troubleshooting
+                  </li>
+                  <li>
+                    HTML &amp; CSS, JavaScript, TailwindCSS, Git &amp; GitHub
+                  </li>
+                  <li>MySQL, PHP, Laravel Template Integration &amp; CRUD</li>
+                  <li>WordPress: WooCommerce, Elementor.</li>
+                  <li>
+                    Shopify: Developing and customizing eCommerce stores using
+                    Shopify to create responsive, user friendly, and
+                    high-performing online businesses.
+                  </li>
+                  <li>
+                    ERP Software: To manage business operations, inventory, asset
+                    transactions, Sales, HR, Manufacturing, and reporting to
+                    improve efficiency and workflow management.
+                  </li>
+                </ul>
+              </div>
+              <a href="resume.pdf" class="btn btn-primary btn-block" download
+                >Download Full Resume</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+================================================================================================
+GET IN TOUCH
+================================================================================================
+-->
+      <section class="contact" id="contact">
+        <div class="wrap">
+          <h2 class="reveal">Get in touch</h2>
+          <p class="section-lead reveal">
+            Have a role, project, or freelance opportunity in mind? I'd like to
+            hear about it.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-info reveal">
+              <ul class="contact-list">
+                <li>
+                  <span class="icon"
+                    ><i class="fa-regular fa-envelope"></i
+                    ><strong>Email</strong></span
+                  ><a href="mailto:rehmanalixheikh786@gmail.com"
+                    >rehmanalixheikh786@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <span class="icon"
+                    ><i class="fa-brands fa-whatsapp"></i
+                    ><strong>Whatsapp</strong></span
+                  ><a href="https://wa.me/+923224594117">+92 322 4594 117 </a>
+                </li>
+                <li>
+                  <span class="icon"
+                    ><i class="fa-solid fa-location-dot"></i
+                    ><strong>Location</strong></span
+                  ><span>Pakistan</span>
+                </li>
+                <li>
+                  <span class="icon"
+                    ><i class="fa-brands fa-github"></i
+                    ><strong>GitHub</strong></span
+                  ><a
+                    href="https://github.com/rehmanalixheikh786"
+                    target="_blank"
+                    rel="noopener"
+                    >github.com/rehmanalixheikh786</a
+                  >
+                </li>
+                <li>
+                  <span class="icon"
+                    ><i class="fa-brands fa-square-linkedin"></i
+                    ><strong>LinkedIn</strong></span
+                  ><a
+                    href="https://www.linkedin.com/in/rehman-ali-1006942a7/"
+                    target="_blank"
+                    rel="noopener"
+                    >linkedin.com/in/rehman-ali-1006942a7</a
+                  >
+                </li>
+                <li>
+                  <span class="icon"
+                    ><i class="fa-brands fa-instagram"></i
+                    ><strong>instagram</strong></span
+                  ><a
+                    href="https://www.instagram.com/rehmanali__sheikh/"
+                    target="_blank"
+                    rel="noopener"
+                    >instagram.com/rehmanali__sheikh</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm" novalidate>
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                />
+                <span class="form-error" id="nameError"></span>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
+                <span class="form-error" id="emailError"></span>
+              </div>
+
+              <div class="form-row">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+                <span class="form-error" id="subjectError"></span>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+                <span class="form-error" id="messageError"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                Send Message
+              </button>
+              <p class="form-success" id="formSuccess" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 
+================================================================================================
+FOOTER
+================================================================================================
+-->
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div class="footer-brand">
+          <a href="#home" class="logo"
+            >alex<span class="logo-dot">.</span>morgan</a
+          >
+          <p>Full-stack developer building clean, useful website.</p>
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://github.com/rehmanalixheikh786"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub profile"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/rehman-ali-1006942a7/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn profile"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.instagram.com/rehmanali__sheikh/"
+            target="_blank"
+            rel="noopener"
+            >instagram</a
+          >
+          <a href="./assets/resume/resume.pdf" download>Resume</a>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#home">Home</a>
+          <a href="#about">About US</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </nav>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#resume">Resume</a>
+          <a href="#contact">Get in touch</a>
+        </nav>
+      </div>
+
+      <div class="wrap footer-bottom">
+        <p>&copy; <span id="year"></span> Rehman Ali. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      &uarr;
+    </button>
+
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

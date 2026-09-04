@@ -1,0 +1,287 @@
+/* 
+================================================================================================
+Calculator — styles
+Token system: instrument-panel dark theme, amber accent, mono display type
+================================================================================================ 
+*/
+
+
+:root {
+    --bg: #0e1012;
+    --card: #17191c;
+    --card-border: rgba(255, 255, 255, 0.06);
+    --display-bg: #1b1e21;
+    --key-bg: #24272b;
+    --key-hover: #2c3035;
+    --key-active: #1b1e21;
+    --key-fn-bg: #34383d;
+    --key-fn-hover: #3d4247;
+    --key-op-bg: #a86a2c;
+    --key-op-hover: #bd7a35;
+    --key-op-text: #17130d;
+    --key-eq-bg: #e0913f;
+    --key-eq-hover: #ecab5f;
+    --text-primary: #f2f0ec;
+    --text-dim: #8b8f94;
+    --text-expr: #6d7278;
+    --shadow-card: 0 30px 70px rgba(0, 0, 0, 0.5), 0 2px 0 rgba(255, 255, 255, 0.03) inset;
+    --shadow-key: 0 2px 0 rgba(0, 0, 0, 0.35);
+
+    --font-display: "JetBrains Mono", "Courier New", monospace;
+    --font-ui: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --radius-card: 28px;
+    --radius-key: 14px;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+[data-theme="light"] {
+    --bg: #eeebe4;
+    --card: #faf8f3;
+    --card-border: rgba(20, 18, 14, 0.06);
+    --display-bg: #f1eee6;
+    --key-bg: #ffffff;
+    --key-hover: #f2efe8;
+    --key-active: #e9e5db;
+    --key-fn-bg: #e5e1d6;
+    --key-fn-hover: #dcd7c9;
+    --key-op-bg: #c9782f;
+    --key-op-hover: #d6893f;
+    --key-op-text: #fdf9f2;
+    --key-eq-bg: #b3611f;
+    --key-eq-hover: #c26f29;
+    --text-primary: #201d17;
+    --text-dim: #6b6558;
+    --text-expr: #948d7c;
+    --shadow-card: 0 30px 70px rgba(60, 50, 30, 0.18), 0 2px 0 rgba(255, 255, 255, 0.6) inset;
+    --shadow-key: 0 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    font-family: var(--font-ui);
+    padding: 24px;
+    transition: background .35s var(--ease);
+}
+
+button {
+    font-family: inherit;
+}
+
+/* 
+================================================================================================
+Card
+================================================================================================ 
+*/
+
+.calculator {
+    width: 100%;
+    max-width: 380px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 22px;
+    transition: background .35s var(--ease), box-shadow .35s var(--ease);
+}
+
+.calc-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 6px 18px;
+}
+
+.calc-name {
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.theme-toggle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    background: transparent;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s var(--ease), color .2s var(--ease);
+}
+
+.theme-toggle:hover {
+    background: var(--key-hover);
+    color: var(--text-primary);
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+/* 
+================================================================================================
+Display 
+================================================================================================ 
+*/
+.display {
+    background: var(--display-bg);
+    border-radius: 18px;
+    padding: 28px 20px 20px;
+    margin-bottom: 18px;
+    text-align: right;
+    overflow: hidden;
+    transition: background .35s var(--ease);
+}
+
+.display-expression {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--text-expr);
+    min-height: 1.3em;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.display-expression::-webkit-scrollbar {
+    display: none;
+}
+
+.display-current {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    line-height: 1.2;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.display-current::-webkit-scrollbar {
+    display: none;
+}
+
+.display-current.is-error {
+    color: #e2604f;
+    font-size: 1.9rem;
+}
+
+/* 
+================================================================================================
+Keypad
+================================================================================================ 
+*/
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.key {
+    border: none;
+    border-radius: var(--radius-key);
+    height: 64px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--key-bg);
+    cursor: pointer;
+    box-shadow: var(--shadow-key);
+    transition: background .18s var(--ease), transform .12s var(--ease), box-shadow .12s var(--ease);
+}
+
+.key:hover {
+    background: var(--key-hover);
+}
+
+.key:active,
+.key.is-pressed {
+    transform: translateY(2px) scale(.97);
+    box-shadow: none;
+}
+
+.key:focus-visible {
+    outline: 2px solid var(--key-eq-bg);
+    outline-offset: 2px;
+}
+
+.key-fn {
+    background: var(--key-fn-bg);
+    font-size: 1.05rem;
+}
+
+.key-fn:hover {
+    background: var(--key-fn-hover);
+}
+
+.key-op {
+    background: var(--key-op-bg);
+    color: var(--key-op-text);
+    font-size: 1.4rem;
+}
+
+.key-op:hover {
+    background: var(--key-op-hover);
+}
+
+.key-equals {
+    background: var(--key-eq-bg);
+    color: var(--key-op-text);
+    font-size: 1.4rem;
+}
+
+.key-equals:hover {
+    background: var(--key-eq-hover);
+}
+
+/* 
+================================================================================================
+Operator/equals highlighted while an operation is pending 
+================================================================================================ 
+*/
+.key-op.is-active {
+    outline: 2px solid var(--text-primary);
+    outline-offset: -2px;
+}
+
+@media (max-width: 420px) {
+    .key {
+        height: 58px;
+        font-size: 1.15rem;
+    }
+
+    .calculator {
+        padding: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.001ms !important;
+    }
+}
