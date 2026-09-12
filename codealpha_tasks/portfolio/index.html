@@ -22,7 +22,7 @@
     />
     <meta property="og:image" content="images/og-cover.jpg" />
 
-      <link rel="icon" href="./assets/icon/logo.png" type="image/icon type">
+      <link rel="icon" href="./assets/icon/logo.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -88,10 +88,16 @@ HERO
 ================================================================================================
 -->
       <section class="hero" id="home">
+        <div class="bg-orbs" aria-hidden="true">
+          <span class="orb orb-1"></span>
+          <span class="orb orb-2"></span>
+          <span class="orb orb-3"></span>
+        </div>
+
         <div class="wrap hero-inner">
           <div class="hero-text reveal">
             <p class="hero-kicker">// hello world</p>
-            <h1>Hi, I'm Rehman Ali</h1>
+            <h1>Hi, I'm <span class="text-gradient">Rehman Ali</span></h1>
             <p class="hero-role">Web Developer</p>
             <p class="hero-copy">
               I build fast, accessible web applications from first line of code
@@ -112,7 +118,7 @@ HERO
           </div>
 
           <div class="hero-visual reveal">
-            <div class="editor-window">
+            <div class="editor-window tilt" data-tilt data-tilt-max="10">
               <div class="editor-titlebar">
                 <span class="dot dot-red"></span>
                 <span class="dot dot-yellow"></span>
@@ -131,6 +137,34 @@ HERO
             <span class="float-chip chip-2">NodeJS</span>
             <span class="float-chip chip-3">ExpressJS</span>
           </div>
+        </div>
+
+        <div class="wave-divider" aria-hidden="true">
+          <svg
+            viewBox="0 0 1600 90"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="waveGradBack" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#5fd0b3" />
+                <stop offset="100%" stop-color="#8b7ffd" />
+              </linearGradient>
+              <linearGradient id="waveGradFront" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#8b7ffd" />
+                <stop offset="100%" stop-color="#5fd0b3" />
+              </linearGradient>
+            </defs>
+            <path
+              class="wave-back"
+              d="M0,45 C200,10 400,80 800,45 C1200,10 1400,80 1600,45 L1600,90 L0,90 Z M1600,45 C1800,10 2000,80 2400,45 C2800,10 3000,80 3200,45 L3200,90 L1600,90 Z"
+              fill="url(#waveGradBack)"
+            />
+            <path
+              class="wave-front"
+              d="M0,60 C250,90 550,20 800,60 C1050,100 1350,30 1600,60 L1600,90 L0,90 Z M1600,60 C1850,90 2150,20 2400,60 C2650,100 2950,30 3200,60 L3200,90 L1600,90 Z"
+            />
+          </svg>
         </div>
       </section>
 
@@ -344,7 +378,7 @@ RESUME
                   </li>
                 </ul>
               </div>
-              <a href="resume.pdf" class="btn btn-primary btn-block" download
+              <a href="./assets/resume/resume.pdf" class="btn btn-primary btn-block" download
                 >Download Full Resume</a
               >
             </div>
@@ -485,7 +519,7 @@ FOOTER
       <div class="wrap footer-inner">
         <div class="footer-brand">
           <a href="#home" class="logo"
-            >alex<span class="logo-dot">.</span>morgan</a
+            >Rehman<span class="logo-dot">.</span>Ali</a
           >
           <p>Full-stack developer building clean, useful website.</p>
         </div>
@@ -535,6 +569,6 @@ FOOTER
       &uarr;
     </button>
 
-    <script src="/assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
