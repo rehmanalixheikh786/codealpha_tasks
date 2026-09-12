@@ -26,7 +26,7 @@ const PROJECTS = [
       "A filterable photo gallery with a full-screen lightbox, keyboard navigation, and smooth transitions.",
     tech: ["HTML", "CSS", "JavaScript"],
     category: "html-css",
-    image: "../assets/images/gallery1.png",
+    image: "./assets/images/gallery1.png",
     gradient: "linear-gradient(135deg,#3d8f7c,#1c222b)",
     github: "https://github.com/rehmanalixheikh786/gallery.git",
     demo: "https://rasgallery.netlify.app/",
@@ -37,7 +37,7 @@ const PROJECTS = [
       "A precedence-aware calculator built without eval(), with full keyboard support and a light/dark theme.",
     tech: ["JavaScript", "CSS"],
     category: "javascript",
-    image: "../assets/images/calculator.png",
+    image: "./assets/images/calculator.png",
     gradient: "linear-gradient(135deg,#a86a2c,#1c222b)",
     github: "https://github.com/rehmanalixheikh786/rascalculator.git",
     demo: "https://rascalculator.netlify.app/",
@@ -48,7 +48,7 @@ const PROJECTS = [
       "A responsive, user-friendly website built with modern technologies, focusing on seamless design and optimal functionality for an enhanced browsing experience.",
     tech: ["HTML", "CSS", "JavaScript"],
     category: "html-css",
-    image: "../assets/images/coder.png",
+    image: "./assets/images/coder.png",
     gradient: "linear-gradient(135deg,#5f6ad0,#1c222b)",
     github: "https://github.com/rehmanalixheikh786/coder.git",
     demo: "https://coder-ras.netlify.app/",
@@ -333,3 +333,76 @@ FOOTER YEAR + INIT
 document.getElementById("year").textContent = new Date().getFullYear();
 
 observeReveals(); // catch all static .reveal elements present at load
+
+/*
+================================================================================================
+3D TILT — pointer-driven perspective tilt for elements marked [data-tilt]
+================================================================================================
+*/
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+
+function initTilt(el) {
+  const maxTilt = Number(el.dataset.tiltMax) || 8;
+
+  function handleMove(event) {
+    const rect = el.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width; // 0 -> 1
+    const y = (event.clientY - rect.top) / rect.height; // 0 -> 1
+    const ry = (x - 0.5) * (maxTilt * 2); // rotateY
+    const rx = (0.5 - y) * (maxTilt * 2); // rotateX
+
+    el.style.setProperty("--rx", `${rx.toFixed(2)}deg`);
+    el.style.setProperty("--ry", `${ry.toFixed(2)}deg`);
+    el.style.setProperty("--tz", "18px");
+    el.classList.add("is-tilting");
+  }
+
+  function handleLeave() {
+    el.style.setProperty("--rx", "0deg");
+    el.style.setProperty("--ry", "0deg");
+    el.style.setProperty("--tz", "0px");
+    el.classList.remove("is-tilting");
+  }
+
+  el.addEventListener("pointermove", handleMove);
+  el.addEventListener("pointerleave", handleLeave);
+}
+
+if (!prefersReducedMotion) {
+  document.querySelectorAll("[data-tilt]").forEach(initTilt);
+}
+
+/*
+================================================================================================
+SPOTLIGHT GLOW — tracks the pointer over skill/project cards to drive a CSS radial highlight
+(--mx / --my custom properties consumed by .skill-card::before and .project-card::after)
+================================================================================================
+*/
+function attachSpotlight(container, selector) {
+  container.addEventListener("pointermove", (event) => {
+    const card = event.target.closest(selector);
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const mx = ((event.clientX - rect.left) / rect.width) * 100;
+    const my = ((event.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty("--mx", `${mx}%`);
+    card.style.setProperty("--my", `${my}%`);
+  });
+}
+
+if (!prefersReducedMotion) {
+  attachSpotlight(skillsGrid, ".skill-card");
+  attachSpotlight(projectsGrid, ".project-card");
+
+  // Light tilt on project cards too, added post-render since cards are dynamic
+  document
+    .querySelectorAll(".project-card")
+    .forEach((card) => {
+      card.dataset.tilt = "";
+      card.dataset.tiltMax = "5";
+      card.classList.add("tilt");
+      initTilt(card);
+    });
+}
